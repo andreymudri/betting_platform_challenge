@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"outDir": "dist",
+		"esModuleInterop": true,
+		"module": "CommonJS",
+
+		"target": "es2020",
+		"moduleResolution": "Node",
+		"baseUrl": "src",
+		"noImplicitAny": true
+	},
+	"ts-node": {
+		"esm": true
+	}
+}
