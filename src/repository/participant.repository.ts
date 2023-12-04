@@ -1,3 +1,4 @@
+import { Participant } from '@prisma/client';
 import { prisma } from '../database';
 import { ParticipantInput } from '../protocols/types';
 
@@ -11,4 +12,8 @@ export async function getParticipants() {
 
 export async function getParticipantById(id: number) {
   return await prisma.participant.findUnique({ where: { id } });
+}
+
+export async function updateParticipant(participant: Partial<Participant>) {
+  return await prisma.participant.update({ where: { id: participant.id }, data: participant });
 }

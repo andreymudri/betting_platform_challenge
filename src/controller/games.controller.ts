@@ -24,9 +24,10 @@ export async function getGameById(req: Request, res: Response) {
 
 export async function finishGame(req: Request, res: Response) {
   const id = +req.params.id;
+  const gameEnd = req.body;
   if (Number.isNaN(id) || (id < 0)) throw new Error('Invalid ID')
   if (!id) throw new Error('Game not found')
-  const game = await gameService.finishGame(Number(id));
+  const game = await gameService.finishGame(Number(id),gameEnd);
   if (!game.id) throw new Error('Game not found')
   return res.status(httpStatus.OK).send(game);
 }

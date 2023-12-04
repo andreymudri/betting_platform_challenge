@@ -1,6 +1,7 @@
+import { Game } from '@prisma/client';
 import e from 'express';
 import { prisma } from '../database';
-import { GameInput } from '../protocols/types';
+import { GameEndInput, GameInput } from '../protocols/types';
 
 
 export async function createGame(game: GameInput) {
@@ -29,12 +30,14 @@ export async function getGameById(id: number) {
 }
 
 
-export async function finishGame(id: number) {
+export async function finishGame(id: number, GameEnd: GameEndInput) {
   return await prisma.game.update({
     where: {
       id
     },
     data: {
+      homeTeamScore: GameEnd.homeTeamScore,
+      awayTeamScore: GameEnd.awayTeamScore,
       isFinished: true
     }
   });

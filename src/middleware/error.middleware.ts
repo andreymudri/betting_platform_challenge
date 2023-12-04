@@ -26,6 +26,9 @@ function errorMiddleware(err: CustomError, req: Request, res: Response, next: Ne
     case "Game already finished":
       statusCode = httpStatus.BAD_REQUEST;
       break;
+    case "Invalid bet amount":
+      statusCode = httpStatus.BAD_REQUEST;
+      break;
     
     default:
       statusCode = httpStatus.INTERNAL_SERVER_ERROR; 

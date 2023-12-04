@@ -5,6 +5,7 @@ import cors from "cors";
 import errorMiddleware from './middleware/error.middleware';
 import participantsRouter from './router/participant.router';
 import gamesRouter from './router/games.router';
+import betsRouter from './router/bets.router';
 
 const app = express();
 app.use(cors());
@@ -16,6 +17,7 @@ app.use(json());
  });
 app.use(participantsRouter);
 app.use(gamesRouter);
+app.use(betsRouter);
 app.use(errorMiddleware);
 
 export default app;

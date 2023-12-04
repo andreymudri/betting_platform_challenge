@@ -12,3 +12,10 @@ export type GameEndInput = {
   homeTeamScore: number,
   awayTeamScore: number,
 }
+export type BetInput = { 
+	homeTeamScore: number;
+	awayTeamScore: number; 
+	amountBet: number; 
+	gameId: number; 
+	participantId: number;
+}
