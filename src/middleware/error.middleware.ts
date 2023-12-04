@@ -17,6 +17,15 @@ function errorMiddleware(err: CustomError, req: Request, res: Response, next: Ne
     case "Game not found":
       statusCode = httpStatus.NOT_FOUND;
       break;
+    case "Invalid ID":
+      statusCode = httpStatus.BAD_REQUEST;
+      break;
+    case "Invalid data":
+      statusCode = httpStatus.BAD_REQUEST;
+      break;
+    case "Game already finished":
+      statusCode = httpStatus.BAD_REQUEST;
+      break;
     
     default:
       statusCode = httpStatus.INTERNAL_SERVER_ERROR; 

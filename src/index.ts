@@ -4,6 +4,7 @@ require('express-async-errors');
 import cors from "cors";
 import errorMiddleware from './middleware/error.middleware';
 import participantsRouter from './router/participant.router';
+import gamesRouter from './router/games.router';
 
 const app = express();
 app.use(cors());
@@ -14,6 +15,7 @@ app.use(json());
      res.sendStatus(httpStatus.OK)
  });
 app.use(participantsRouter);
+app.use(gamesRouter);
 app.use(errorMiddleware);
 
 export default app;

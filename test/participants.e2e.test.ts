@@ -48,6 +48,12 @@ describe("POST /participants", () => {
     const response = await supertest(app).post("/participants").send({ name: "test" });
     expect(response.status).toBe(httpStatus.BAD_REQUEST);
   });
+  it("Should not be able to create a new participant low balance", async () => {
+    const participant = await createParticipant();
+    participant.balance = 100;
+    const response = await supertest(app).post("/participants").send(participant);
+    expect(response.status).toEqual(httpStatus.BAD_REQUEST);
+  })
 });
 
 describe("GET /participants/:id", () => {
