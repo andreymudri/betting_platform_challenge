@@ -18,7 +18,7 @@ export async function getGameById(req: Request, res: Response) {
   if (Number.isNaN(id) || (id < 0)) throw new Error('Invalid ID')
   if (!id) throw new Error('Game not found')
   const game = await gameService.getGameById(Number(id));
-  if (!game.id) throw new Error('Game not found')
+  if (!game || !game.id) throw new Error('Game not found')
   return res.status(httpStatus.OK).send(game);
 }
 
@@ -28,6 +28,6 @@ export async function finishGame(req: Request, res: Response) {
   if (Number.isNaN(id) || (id < 0)) throw new Error('Invalid ID')
   if (!id) throw new Error('Game not found')
   const game = await gameService.finishGame(Number(id),gameEnd);
-  if (!game.id) throw new Error('Game not found')
+  if (!game || !game.id) throw new Error('Game not found')
   return res.status(httpStatus.OK).send(game);
 }

@@ -7,4 +7,6 @@ module.exports = {
 	},
 	testMatch: ['<rootDir>/test/*.(test|spec).ts'],
 	testTimeout: 15000,
+	collectCoverage: true,
+	coverageReporters: ['json', 'lcov', 'text', 'clover', 'json-summary'],
 };

@@ -15,5 +15,17 @@ export async function getParticipantById(id: number) {
 }
 
 export async function updateParticipant(participant: Partial<Participant>) {
-  return await prisma.participant.update({ where: { id: participant.id }, data: participant });
+  return await prisma.participant.update({
+    where: { id: participant.id }, data: {
+      createdAt: participant.createdAt,
+      updatedAt: participant.updatedAt,
+      name: participant.name,
+      balance: participant.balance,
+  } });
+}
+export async function updateParticipantBet(id: number, balance: number) {
+  return await prisma.participant.update({
+    where: { id },
+    data: { balance }
+  });
 }

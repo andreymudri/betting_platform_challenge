@@ -20,9 +20,6 @@ function errorMiddleware(err: CustomError, req: Request, res: Response, next: Ne
     case "Invalid ID":
       statusCode = httpStatus.BAD_REQUEST;
       break;
-    case "Invalid data":
-      statusCode = httpStatus.BAD_REQUEST;
-      break;
     case "Game already finished":
       statusCode = httpStatus.BAD_REQUEST;
       break;

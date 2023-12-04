@@ -106,6 +106,14 @@ describe("POST /games", () => {
     const response = await supertest(app).post("/games").send({});
     expect(response.status).toEqual(httpStatus.BAD_REQUEST);
   })
+  it("should fail to finish a game that doesnt exist", async () => {
+    const score: GameEndInput = {
+      awayTeamScore:1,
+      homeTeamScore: 2,
+    }
+    const response = await supertest(app).post(`/games/0/finish`).send(score);
+    expect(response.status).toEqual(httpStatus.NOT_FOUND);
+  })
 
 });
 

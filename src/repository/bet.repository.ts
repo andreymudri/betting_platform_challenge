@@ -22,7 +22,6 @@ export async function createBet(bet: BetInput) {
 
 }
 export async function updateBet(bet: Bet ) {
-
     const updateBet = await prisma.bet.update({
       where: {
         id: bet.id

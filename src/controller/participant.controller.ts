@@ -14,7 +14,6 @@ export async function getParticipants(req: Request, res: Response) {
 
 export async function getParticipantById(req: Request, res: Response) {
   const id = +req.params.id;
-  console.log(id)
   if (Number.isNaN(id) || (id < 0)) return res.status(httpStatus.BAD_REQUEST).send({ message: "Invalid ID" });
   if (!id) throw new Error('Participant not found')
   const participant = await participantService.getParticipantById(Number(id));

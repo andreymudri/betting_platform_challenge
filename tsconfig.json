@@ -12,11 +12,12 @@
 		"paths": {
 			"@/*": ["*"]
 		},
+		"strictNullChecks": true,
 		"plugins": [
 			{
 				"transform": "typescript-transform-paths"
 			}
 		]
 	},
-	"include": ["src", "tests"]
+	"include": ["src", "tests", ".eslintrc.js", "jest.config.js", ".eslintrc.js"]
 }

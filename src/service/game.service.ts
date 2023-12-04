@@ -16,11 +16,11 @@ export async function getGameById(id: number) {
 }
 
 export async function finishGame(id: number, gameEnd: GameEndInput) {
-  const game = await gamesRepository.finishGame(id, gameEnd);
-  if (!game.id) throw new Error('Game not found')
-  await updateBetsByGameId(game.id, game.homeTeamScore, game.awayTeamScore);
+  const check = await gamesRepository.finishGame(id, gameEnd);
+  if (!check.id) throw new Error('Game not found')
+  await updateBetsByGameId(check.id, check.homeTeamScore, check.awayTeamScore);
 
-
+  const game = await gamesRepository.getGameById(id);
 
   return game;
 }

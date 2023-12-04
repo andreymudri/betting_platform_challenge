@@ -1,5 +1,3 @@
-import { Game } from '@prisma/client';
-import e from 'express';
 import { prisma } from '../database';
 import { GameEndInput, GameInput } from '../protocols/types';
 
@@ -25,6 +23,9 @@ export async function getGameById(id: number) {
   return await prisma.game.findUnique({
     where: {
       id
+    },
+    include: {
+      bets: true
     }
   });
 }
