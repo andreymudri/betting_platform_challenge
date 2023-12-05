@@ -44,7 +44,6 @@ Alternatively you can use Docker
 
 # Using the Docker Image
 
-This tutorial will guide you through the process of using the Docker image you've pushed to Docker Hub.
 
 ## Prerequisites
 
