@@ -1,3 +1,5 @@
+###### The deploy is located at ([render](https://technicalbackend-t2j0.onrender.com))
+
 ## Overview
 
 Betting with friends on the outcome of a football game has never been more exciting than it is today. Over the recent years, this phenomenon has taken on a new dimension, with numerous applications emerging to facilitate this experience. This README provides an overview of our betting app, outlining its purpose and functionality.
@@ -44,7 +46,6 @@ Alternatively you can use Docker
 
 # Using the Docker Image
 
-This tutorial will guide you through the process of using the Docker image you've pushed to Docker Hub.
 
 ## Prerequisites
 
@@ -74,16 +75,17 @@ Replace container_id with the actual container ID or name. You can find the cont
 =======
 1. Clone the repository by running
 2. ```bash
-   git clone https://github.com/andreymudri/Backend_Technical_Challenge.git 
+   git clone https://github.com/andreymudri/betting_platform_challenge.git 
 ```
 3. Install the dependencies by running 
 ```bash
-cd Backend_Technical_Challenge && npm install
+cd betting_platform_challenge && npm install
 ```
 4. It is also needed to create a .env file inside the base folder with: <br>
  DATABASE_URL - Self explanatory <br>
  PORT - For your application, else itll just use the default
-5. Start the application by running 
+
+6. Start the application by running 
 ```bash
 npm run dev
 ```
