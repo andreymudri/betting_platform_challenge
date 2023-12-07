@@ -7,6 +7,7 @@ import { GameEndInput } from '../src/protocols/types';
 
 beforeAll(async () => {
   await init();
+  await cleanDb();
 });
 afterEach(async () => {
   await cleanDb();
